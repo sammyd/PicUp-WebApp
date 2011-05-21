@@ -1,0 +1,111 @@
+/* Define some variables */
+
+$main-bg: #fff;
+$grey-bg: #f0f0f0;
+$lt-grey-bg: #f9f9f9;
+$grey-border: #ccc;
+$dark-green: #151;
+$light-green: #6B6;
+$dark-red: #511;
+$light-red: #B66;
+$dark-yellow: #E0A000;
+$light-yellow: #ffda77;
+
+@mixin rounded($radius: 10px) {
+  border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+}
+
+header, footer, aside, nav, article {
+    display: block;
+}
+
+body {
+    margin: 0 auto;
+    font: 13px/22px georgia,serif;
+    background: $main-bg;
+    color: #222;
+}
+
+pre {
+    font-family: "Courier New", Courier, Monaco, monospace;
+    margin-top: 30px;
+    padding: 5px;
+    background-color: $grey-bg;
+    border-top: 1px solid $grey-border;
+}
+
+h1 {
+    font: 1.5625em/30px georgia,serif;
+    font-size: 36px;
+    padding: 15px 0;
+}
+
+p {
+    padding-bottom: 22px;
+}
+
+a {
+    text-decoration: none;
+    color: #666;
+    &:visited {
+        text-decoration: none;
+        color: #666;
+    }
+    &:hover {
+        color: #999;
+        background-color: $lt-grey-bg;
+    }
+}
+
+.container {
+    width: 964px;
+    margin: 0 auto;
+}
+
+header {
+    background: $grey-bg;
+    overflow: hidden;
+    padding: 20px 0 35px 0;
+    
+    .container {
+        width: 920px;
+    }
+    
+    h1 {
+        float: left;
+        padding: 0;
+        
+        img {
+            padding-right: 10px;
+            margin-bottom: -15px;
+        }
+    }
+    nav {
+        float: right;
+        padding: 5px 0;
+    } 
+}
+
+
+nav {
+    padding: 0 0.7em;
+    white-space: nowrap;
+    
+    ul li {
+        list-style-type: none;
+        display: inline-block;
+        padding: 0.2em 0;
+        
+        a {
+            padding: 7px;
+            @include rounded;
+        }
+    }
+}
+
+section {
+    display: block;
+    margin: 15px auto;
+}
