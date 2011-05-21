@@ -18,7 +18,13 @@ class Photo < ActiveRecord::Base
   @ip_regex = /^([1-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(\.([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])){3}$/
   
   attr_accessible :browserDetails, :fromIP, :image
-  has_attached_file :image
+  has_attached_file :image,
+            :styles         => { :thumb => "100x100#", :small => "250x250#" },
+            :storage        => ENV['PHOTO_STORE'],
+            :s3_credentials => { :access_key_id     => ENV["S3_KEY"],
+                                 :secret_access_key => ENV["S3_SECRET"] },
+            :s3_bucket      => ENV["S3_BUCKET"],
+            :path           => "/:id/:style.:extension"
   
   validates :fromIP, 
             :presence => true, 
