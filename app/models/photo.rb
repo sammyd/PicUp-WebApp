@@ -23,7 +23,7 @@ class Photo < ActiveRecord::Base
             :storage        => ENV['PHOTO_STORE'],
             :s3_credentials => { :access_key_id     => ENV["S3_KEY"],
                                  :secret_access_key => ENV["S3_SECRET"] },
-            :s3_bucket      => ENV["S3_BUCKET"],
+            :bucket      => ENV["S3_BUCKET"],
             :path           => "/:id/:style.:extension"
   
   validates :fromIP, 
