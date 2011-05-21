@@ -18,7 +18,8 @@ pre {
 h1 {
   font: 1.563em/30px georgia, serif;
   font-size: 36px;
-  padding: 15px 0; }
+  padding: 10px 0 5px 0;
+  margin: 8px; }
 
 p {
   padding-bottom: 22px; }
@@ -69,6 +70,33 @@ nav {
 section {
   display: block;
   margin: 15px auto; }
+
+.photos {
+  clear: both;
+  overflow: hidden; }
+  .photos .photo {
+    float: left;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    background-color: #f9f9f9;
+    width: 250px;
+    padding: 10px;
+    margin: 10px; }
+    .photos .photo a.delete {
+      border-radius: 10px;
+      -moz-border-radius: 10px;
+      -webkit-border-radius: 10px;
+      background-color: #bb6666;
+      padding: 5px;
+      color: white;
+      text-align: center; }
+      .photos .photo a.delete:hover {
+        background-color: #551111; }
+    .photos .photo ul {
+      list-style: none;
+      padding: 0px;
+      font-size: 75%; }
 
 fieldset {
   overflow: hidden;
@@ -190,7 +218,12 @@ select.timeField {
   -webkit-border-radius: 10px; }
 
 footer {
-  clear: both; }
+  clear: both;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  padding: 5px; }
   footer nav {
     display: block;
     margin: 0 auto;

@@ -39,7 +39,8 @@ pre {
 h1 {
     font: 1.5625em/30px georgia,serif;
     font-size: 36px;
-    padding: 15px 0;
+    padding: 10px 0 5px 0;
+    margin: 8px;
 }
 
 p {
@@ -109,6 +110,42 @@ section {
     display: block;
     margin: 15px auto;
 }
+
+.photos {
+    clear: both;
+    overflow: hidden;
+    
+    .photo {
+        float: left;
+        @include rounded;
+        background-color: $lt-grey-bg;
+        width: 250px;
+        padding: 10px;
+        margin: 10px;
+        
+        a.delete {
+            @include rounded;
+            background-color: $light-red;
+            padding: 5px;
+            color: white;
+            text-align: center;
+            &:hover {
+               background-color: $dark-red;
+            }
+        }
+        
+        ul {
+            list-style: none;
+            padding: 0px;
+            font-size: 75%;
+        }
+    }
+}
+
+
+
+
+
 
 
 fieldset {
@@ -260,6 +297,9 @@ select.timeField {
 
 footer {
     clear: both;
+    background-color: $grey-bg;
+    @include rounded;
+    padding: 5px;
     
     nav {
         display: block;

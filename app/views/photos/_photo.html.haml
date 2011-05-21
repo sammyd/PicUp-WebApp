@@ -2,7 +2,7 @@
   %a{ :href => photo.image.url }= image_tag photo.image.url(:small)
   = link_to "delete", photo, :method => :delete,
             :confirm => "Are you sure you want to delete this photo?",
-            :title   => "Deleting photo"
+            :title   => "Deleting photo", :class => "delete"
   %ul.photoDetails
     %li
       %b From IP:
