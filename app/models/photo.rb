@@ -39,6 +39,8 @@ class Photo < ActiveRecord::Base
   validates :browserDetails, :presence => true
   
   validates_attachment_presence :image
+  
+  default_scope :order => "created_at DESC"
 
             
 end
