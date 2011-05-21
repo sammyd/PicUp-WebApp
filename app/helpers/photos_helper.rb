@@ -1,2 +1,2 @@
-module PhotoHelper
+module PhotosHelper
 end

@@ -1,4 +1,4 @@
-class PhotoController < ApplicationController
+class PhotosController < ApplicationController
   
   def index
     @photos = Photo.page(params[:page])
