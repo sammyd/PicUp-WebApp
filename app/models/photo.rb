@@ -15,6 +15,17 @@
 #
 
 class Photo < ActiveRecord::Base
+  @ip_regex = /^([1-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(\.([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])){3}$/
   
-  attr_accessible :browserDetails, :fromIP
+  attr_accessible :browserDetails, :fromIP, :image
+  has_attached_file :image
+  
+  validates :fromIP, 
+            :presence => true, 
+            :format => { :with => @ip_regex }
+  validates :browserDetails, :presence => true
+  
+  validates_attachment_presence :image
+
+            
 end
