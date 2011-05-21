@@ -20,7 +20,7 @@ describe PhotosController do
     
     it "should show the right title" do
       get :index
-      response.should have_selector("title", :content => "PicUp | Uploaded Photos:")
+      response.should have_selector("title", :content => "PicUp | Uploaded Photos")
     end
     
     it "should display images for each of the Photo objects" do
@@ -69,7 +69,7 @@ describe PhotosController do
     it "should show the IP address for incoming images" do
       get :index
       @photos.each do |p|
-        response.should have_selector("li", :content => p.fromURL)
+        response.should have_selector("li", :content => p.fromIP)
       end
     end
     
@@ -95,7 +95,7 @@ describe PhotosController do
     describe "form" do
       it "should have the right form" do
         get :new
-        response.should have_selector("form", :action => "/photos", :method => "POST")
+        response.should have_selector("form", :action => "/photos", :method => "post")
       end
       
       it "should have a photo upload box" do
@@ -122,6 +122,8 @@ describe PhotosController do
       end
     
       it "should create a photo" do
+        @request.env["HTTP_USER_AGENT"] = Factory.next(:browser)
+        @request.env["REMOTE_ADDR"] = Factory.next(:ip)
         lambda do
           post :create, :photo => @attr
         end.should change(Photo, :count).by(1)
@@ -169,17 +171,12 @@ describe PhotosController do
     
     it "should redirect to the index action" do
       delete :destroy, :id => @photo
-      response.should redirect_to :index
+      response.should redirect_to photos_path
     end
     
     it "should show a success message" do
       delete :destroy, :id => @photo
       flash[:succes] =~ /photo deleted successfully/i
-    end
-    
-    it "should show an error in case of failure" do
-      delete :destroy, :id => nil
-      flash[:error] =~ /there was an error/i
     end
   end
 end

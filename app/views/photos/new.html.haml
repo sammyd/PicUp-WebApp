@@ -1,1 +1,10 @@
-%h1 photos#new
+%h1 Upload Photo Manually
+
+= form_for @photo, :html => { :multipart => true } do |f|
+
+  %fieldset
+    .field
+      = f.label :image
+      = f.file_field :image  
+  
+  = f.submit "Upload photo", :disable_with => "Uploading now..."

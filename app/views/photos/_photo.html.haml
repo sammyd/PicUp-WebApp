@@ -1,2 +1,15 @@
 .photo
-  = image_tag photo.image.url
+  %a{ :href => photo.image.url }= image_tag photo.image.url
+  %ul.photoDetails
+    %li
+      %b From IP:
+      = photo.fromIP
+    %li
+      %b Browser Details:
+      = photo.browserDetails
+    %li
+      %b Upload Time:
+      = photo.created_at
+    %li
+      %b Photo Size:
+      = "#{photo.image_file_size.to_s} bytes"
