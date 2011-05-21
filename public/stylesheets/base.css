@@ -1,0 +1,200 @@
+/* Define some variables */
+header, footer, aside, nav, article {
+  display: block; }
+
+body {
+  margin: 0 auto;
+  font: 13px/22px georgia, serif;
+  background: white;
+  color: #222; }
+
+pre {
+  font-family: "Courier New", Courier, Monaco, monospace;
+  margin-top: 30px;
+  padding: 5px;
+  background-color: #f0f0f0;
+  border-top: 1px solid #cccccc; }
+
+h1 {
+  font: 1.563em/30px georgia, serif;
+  font-size: 36px;
+  padding: 15px 0; }
+
+p {
+  padding-bottom: 22px; }
+
+a {
+  text-decoration: none;
+  color: #666; }
+  a:visited {
+    text-decoration: none;
+    color: #666; }
+  a:hover {
+    color: #999;
+    background-color: #f9f9f9; }
+
+.container {
+  width: 964px;
+  margin: 0 auto; }
+
+header {
+  background: #f0f0f0;
+  overflow: hidden;
+  padding: 20px 0 35px 0; }
+  header .container {
+    width: 920px; }
+  header h1 {
+    float: left;
+    padding: 0; }
+    header h1 img {
+      padding-right: 10px;
+      margin-bottom: -15px; }
+  header nav {
+    float: right;
+    padding: 5px 0; }
+
+nav {
+  padding: 0 0.7em;
+  white-space: nowrap; }
+  nav ul li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 0.2em 0; }
+    nav ul li a {
+      padding: 7px;
+      border-radius: 10px;
+      -moz-border-radius: 10px;
+      -webkit-border-radius: 10px; }
+
+section {
+  display: block;
+  margin: 15px auto; }
+
+fieldset {
+  overflow: hidden;
+  padding: 0; }
+
+fieldset.with-label {
+  padding-top: 20px;
+  margin: 25px 0;
+  border: 1px solid #cccccc;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px; }
+  fieldset.with-label span.fieldset-label {
+    background-color: white;
+    border: 1px solid #cccccc;
+    color: #999;
+    font-size: 18px;
+    padding: 5px 20px;
+    margin-top: -37px;
+    margin-left: 30px;
+    height: 22px;
+    display: block;
+    position: absolute;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px; }
+
+ul.errorlist {
+  list-style: none;
+  font-size: 11px;
+  color: red;
+  padding: 0 6px;
+  margin: 0; }
+
+.field {
+  width: 232px;
+  float: left;
+  padding: 4px;
+  height: 82px; }
+  .field label {
+    font-family: Georgia,serif;
+    padding: 5px 0 0 0;
+    font-size: 19px;
+    color: #848787; }
+  .field span {
+    width: 220px;
+    padding: 6px;
+    font-size: 14px;
+    display: block; }
+  .field input {
+    font-size: 12px;
+    width: 220px;
+    padding: 6px;
+    background-color: #f0f0f0;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px; }
+  .field select {
+    font-size: 12px;
+    margin-top: 2px;
+    height: 29px;
+    width: 234px;
+    background-color: #f0f0f0;
+    border: 1px solid #cccccc; }
+
+.double {
+  width: 472px; }
+  .double span {
+    width: 460px; }
+  .double input {
+    width: 460px; }
+
+input.dateField {
+  width: 100px; }
+
+input.timeField {
+  width: 100px; }
+
+select.timeField {
+  width: 100px; }
+
+.field_with_errors input {
+  border-color: #551111;
+  background-color: #e6a6a6; }
+.field_with_errors select {
+  border-color: #551111;
+  background-color: #e6a6a6; }
+
+/* This section here for the different types of flash messages */
+.flash {
+  text-align: center;
+  padding: 10px;
+  margin: 10px auto;
+  display: block;
+  width: 80%;
+  border: 1px solid;
+  font: 1.563em/30px georgia, serif;
+  font-size: 24px; }
+
+.error {
+  background-color: #bb6666;
+  color: #fff;
+  border-color: #551111; }
+
+.success {
+  background-color: #66bb66;
+  color: #115511;
+  border-color: #115511; }
+
+.notice {
+  background-color: #ffda77;
+  color: #e0a000;
+  border-color: #e0a000; }
+
+.round {
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px; }
+
+footer {
+  clear: both; }
+  footer nav {
+    display: block;
+    margin: 0 auto;
+    background-color: #f0f0f0;
+    padding: 5px; }
+
+/* End of flash */

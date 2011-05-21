@@ -109,3 +109,164 @@ section {
     display: block;
     margin: 15px auto;
 }
+
+
+fieldset {
+    overflow: hidden;
+    padding: 0;
+}
+
+fieldset.with-label {
+    padding-top: 20px;
+    margin: 25px 0;
+    border: 1px solid $grey-border;
+    @include rounded;
+    
+    span.fieldset-label {
+        background-color: $main-bg;
+        border: 1px solid $grey-border;
+        color: #999;
+        font-size: 18px;
+        padding: 5px 20px;
+        margin-top: -37px;
+        margin-left: 30px;
+        height: 22px;
+        display: block;
+        position: absolute;
+        @include rounded;
+    }
+}
+
+
+ul.errorlist {
+    list-style: none;
+    font-size: 11px;
+    color: red;
+    padding: 0 6px;
+    margin: 0;
+}
+
+.field {
+    width: 232px;
+    float: left;
+    padding: 4px;
+    height: 82px;
+    
+    label {
+        font-family: Georgia,serif;
+        padding: 5px 0 0 0;
+        font-size: 19px;
+        color: #848787;
+    }
+    
+    span {
+        width: 220px;
+        padding: 6px;
+        font-size: 14px;
+        display: block;
+    }
+    
+    input {
+        font-size: 12px;
+        width: 220px;
+        padding: 6px;
+        background-color: $grey-bg;
+        border: 1px solid $grey-border;
+        @include rounded(8px);
+    }
+    
+    select {
+        font-size: 12px;
+        margin-top: 2px;
+        height: 29px;
+        width: 234px;
+        background-color: $grey-bg;
+        border: 1px solid $grey-border;
+    }
+}
+
+.double {
+    width: 472px;
+    
+    span {
+        width: 460px;
+    }
+    
+    input {
+        width: 460px;
+    }
+}
+
+input.dateField {
+    width: 100px;
+}
+
+input.timeField {
+    width: 100px;
+}
+
+select.timeField {
+    width: 100px;
+}
+
+.field_with_errors {
+    input {
+        border-color: $dark-red;
+        background-color: #e6a6a6;
+    }
+    
+    select {
+        border-color: $dark-red;
+        background-color: #e6a6a6;
+    }
+    
+}
+
+
+/* This section here for the different types of flash messages */
+.flash {
+    text-align: center;
+    padding: 10px;
+    margin: 10px auto;
+    display: block;
+    width: 80%;
+    border: 1px solid;
+    font: 1.5625em/30px georgia,serif;
+    font-size: 24px;
+}
+
+.error {
+    background-color: $light-red;
+    color: #fff;
+    border-color: $dark-red;
+}
+
+.success {
+    background-color: $light-green;
+    color: $dark-green;
+    border-color: $dark-green;
+}
+
+.notice {
+    background-color: $light-yellow;
+    color: $dark-yellow;
+    border-color: $dark-yellow;
+}
+
+// Massively overused class to make things look nice
+.round {
+    @include rounded;
+}
+
+footer {
+    clear: both;
+    
+    nav {
+        display: block;
+        margin: 0 auto;
+        background-color: $grey-bg;
+        padding: 5px;
+    }
+}
+
+/* End of flash */
