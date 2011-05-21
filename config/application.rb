@@ -15,11 +15,9 @@ module PicUp
     # Custom directories with classes and modules you want to be autoloadable.
     # config.autoload_paths += %W(#{config.root}/extras)
     
-    
     config.generators do |g|
       g.template_engine :haml
-      g.test_framework :rpsec, :fixture => true, :views => false
-      g.fixture_replacement :factory_girl, :dir => "spec/factories"
+      g.test_framework :rspec, :fixture => false, :views => false
     end
 
     # Only load the plugins named here, in the order given (default is alphabetical).
