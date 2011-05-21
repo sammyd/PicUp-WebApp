@@ -26,7 +26,7 @@ describe PhotosController do
     it "should display images for each of the Photo objects" do
       get :index
       @photos.each do |p|
-        response.should have_selector("img", :src => p.image.url)
+        response.should have_selector("img", :src => p.image.url(:small))
       end
     end
     
@@ -54,7 +54,7 @@ describe PhotosController do
       it "should have images for the elements on the first page" do
         get :index
         @photos[0..29].each do |p|
-          response.should have_selector("img", :src => p.image.url)
+          response.should have_selector("img", :src => p.image.url(:small))
         end
       end
       
