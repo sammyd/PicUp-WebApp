@@ -47,7 +47,8 @@ describe PhotoController do
           
       it "should paginate the photos" do
         get :index
-        pending
+        response.should have_selector("a", :href => "/photos?page=2", :content => "Next")
+        response.should have_selector("a", :href => "/photos?page=2", :content => "2")
       end
       
       it "should have images for the elements on the first page" do

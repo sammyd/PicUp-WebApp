@@ -1,6 +1,7 @@
 class PhotoController < ApplicationController
   
   def index
+    @photos = Photo.page(params[:page])
   end
   
   def destroy

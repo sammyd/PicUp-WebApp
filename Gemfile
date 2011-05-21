@@ -8,6 +8,7 @@ gem 'haml'
 gem 'sass'
 gem 'jquery-rails'
 gem 'paperclip'
+gem 'kaminari'
 
 group :development do
 	gem 'rspec-rails', '2.6.0'
