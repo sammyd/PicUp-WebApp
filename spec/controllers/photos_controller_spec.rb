@@ -7,9 +7,10 @@ describe PhotosController do
   describe "GET 'index'" do
     before(:each) do
       @photos = []
-      3.times do
+      3.times do |i|
         @photos << Factory(:photo,  :fromIP => Factory.next(:ip),
-                                    :browserDetails => Factory.next(:browser))
+                                    :browserDetails => Factory.next(:browser),
+                                    :created_at => i.days.ago )
       end
     end
     
@@ -30,18 +31,26 @@ describe PhotosController do
       end
     end
     
-    it "should have a link to the original for each image" do
+    it "should have an image linked to the original for each image" do
       get :index
       @photos.each do |p|
         response.should have_selector("a", :href => p.image.url)
       end
     end
     
+    it "should have a button linked to the origianl for each image" do
+      get :index
+      @photos.each do |p|
+        response.should have_selector("a", :href => p.image.url, :content => "download")
+      end
+    end
+    
     describe "pagination" do
       before(:each) do
-        30.times do
+        30.times do |i|
           @photos << Factory(:photo,  :fromIP => Factory.next(:ip),
-                                      :browserDetails => Factory.next(:browser))
+                                      :browserDetails => Factory.next(:browser),
+                                      :created_at => (i+3).days.ago)
         end
       end
           

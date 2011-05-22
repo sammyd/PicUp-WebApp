@@ -123,14 +123,24 @@ section {
         padding: 10px;
         margin: 10px;
         
-        a.delete {
+        a {
             @include rounded;
-            background-color: $light-red;
             padding: 5px;
             color: white;
             text-align: center;
-            &:hover {
-               background-color: $dark-red;
+
+            &.delete {
+                background-color: $light-red;
+                &:hover {
+                    background-color: $dark-red;
+                };
+            }
+            
+            &.download {
+                background-color: $light-green;
+                &:hover {
+                    background-color: $dark-green;
+                };
             }
         }
         
