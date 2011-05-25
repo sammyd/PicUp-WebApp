@@ -4,3 +4,4 @@ log/*.log
 tmp/
 public/system
 config/initializers/load_s3.rb
+.DS_Store

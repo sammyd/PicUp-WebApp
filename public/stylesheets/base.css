@@ -41,15 +41,16 @@ a {
 header {
   background: #f0f0f0;
   overflow: hidden;
-  padding: 20px 0 35px 0; }
+  padding: 20px 0 15px 0; }
   header .container {
     width: 920px; }
+    header .container img {
+      float: left; }
   header h1 {
     float: left;
-    padding: 0; }
-    header h1 img {
-      padding-right: 10px;
-      margin-bottom: -15px; }
+    padding: 0;
+    margin-top: 30px;
+    margin-left: 0px; }
   header nav {
     float: right;
     padding: 5px 0; }
